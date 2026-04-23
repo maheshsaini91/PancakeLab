@@ -9,9 +9,11 @@ public class Order {
     private final int room;
 
     public Order(int building, int room) {
-        this.id = UUID.randomUUID();
+        if (building <= 0) throw new IllegalArgumentException("Building must be greater than 0");
+        if (room <= 0)     throw new IllegalArgumentException("Room must be greater than 0");
+        this.id       = UUID.randomUUID();
         this.building = building;
-        this.room = room;
+        this.room     = room;
     }
 
     public UUID getId() {
