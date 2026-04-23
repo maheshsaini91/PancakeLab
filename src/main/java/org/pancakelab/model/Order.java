@@ -9,11 +9,17 @@ public class Order {
     private final int room;
 
     public Order(int building, int room) {
-        if (building <= 0) throw new IllegalArgumentException("Building must be greater than 0");
-        if (room <= 0)     throw new IllegalArgumentException("Room must be greater than 0");
-        this.id       = UUID.randomUUID();
+        if (building <= 0) {
+            throw new IllegalArgumentException("Building must be greater than 0");
+        }
+
+        if (room <= 0){
+            throw new IllegalArgumentException("Room must be greater than 0");
+        }
+
+        this.id = UUID.randomUUID();
         this.building = building;
-        this.room     = room;
+        this.room = room;
     }
 
     public UUID getId() {
@@ -30,8 +36,14 @@ public class Order {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
         Order order = (Order) o;
         return Objects.equals(id, order.id);
     }

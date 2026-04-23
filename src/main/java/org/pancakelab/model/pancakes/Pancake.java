@@ -9,8 +9,10 @@ public class Pancake implements PancakeRecipe {
     private final List<Ingredient> ingredients;
 
     public Pancake(List<Ingredient> ingredients) {
-        if (ingredients == null || ingredients.isEmpty())
+        if (ingredients == null || ingredients.isEmpty()) {
             throw new IllegalArgumentException("Pancake must have at least one ingredient");
+        }
+
         this.ingredients = List.copyOf(ingredients);
     }
 

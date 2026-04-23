@@ -78,4 +78,21 @@ public class PancakeServiceIngredientAPITest {
         assertThrows(IllegalArgumentException.class,
                 () -> pancakeService.addIngredient(order.id(), UUID.randomUUID(), Ingredient.DARK_CHOCOLATE));
     }
+
+    @Test
+    public void GivenPancakeStartedForDifferentOrder_WhenAddingIngredient_ThenExceptionThrown_Test() {
+        OrderInfo otherOrder = pancakeService.createOrder(2, 2);
+        UUID pancakeId = pancakeService.startPancake(order.id());
+        assertThrows(IllegalArgumentException.class,
+                () -> pancakeService.addIngredient(otherOrder.id(), pancakeId, Ingredient.DARK_CHOCOLATE));
+    }
+
+    @Test
+    public void GivenPancakeStartedForDifferentOrder_WhenFinishingPancake_ThenExceptionThrown_Test() {
+        OrderInfo otherOrder = pancakeService.createOrder(2, 2);
+        UUID pancakeId = pancakeService.startPancake(order.id());
+        pancakeService.addIngredient(order.id(), pancakeId, Ingredient.DARK_CHOCOLATE);
+        assertThrows(IllegalArgumentException.class,
+                () -> pancakeService.finishPancake(otherOrder.id(), pancakeId));
+    }
 }
