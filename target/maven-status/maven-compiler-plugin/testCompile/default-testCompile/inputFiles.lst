@@ -3,6 +3,8 @@
 /Users/mahesh/Downloads/PancakeLab/src/test/java/org/pancakelab/model/OrderInfoTest.java
 /Users/mahesh/Downloads/PancakeLab/src/test/java/org/pancakelab/model/OrderTest.java
 /Users/mahesh/Downloads/PancakeLab/src/test/java/org/pancakelab/model/PancakeTest.java
+/Users/mahesh/Downloads/PancakeLab/src/test/java/org/pancakelab/repository/OrderRepositoryTest.java
+/Users/mahesh/Downloads/PancakeLab/src/test/java/org/pancakelab/repository/PancakeRepositoryTest.java
 /Users/mahesh/Downloads/PancakeLab/src/test/java/org/pancakelab/service/PancakeServiceConcurrencyTest.java
 /Users/mahesh/Downloads/PancakeLab/src/test/java/org/pancakelab/service/PancakeServiceIngredientAPITest.java
 /Users/mahesh/Downloads/PancakeLab/src/test/java/org/pancakelab/service/PancakeServiceTest.java

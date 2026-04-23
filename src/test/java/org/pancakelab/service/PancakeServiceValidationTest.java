@@ -58,6 +58,14 @@ public class PancakeServiceValidationTest {
     }
 
     @Test
+    public void GivenOrderPrepared_WhenCompletingOrderAgain_ThenExceptionThrown_Test() {
+        pancakeService.completeOrder(order.id());
+        pancakeService.prepareOrder(order.id());
+        assertThrows(IllegalStateException.class,
+                () -> pancakeService.completeOrder(order.id()));
+    }
+
+    @Test
     public void GivenOrderCompleted_WhenAddingIngredient_ThenExceptionThrown_Test() {
         UUID pancakeId = pancakeService.startPancake(order.id());
         pancakeService.completeOrder(order.id());
