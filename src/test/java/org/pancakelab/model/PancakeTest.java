@@ -2,6 +2,7 @@ package org.pancakelab.model;
 
 import org.junit.jupiter.api.Test;
 import org.pancakelab.enums.Ingredient;
+import org.pancakelab.model.pancakes.Pancake;
 
 import java.util.List;
 
