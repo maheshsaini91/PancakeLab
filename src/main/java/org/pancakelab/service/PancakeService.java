@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
+import static org.pancakelab.service.UtilsService.validateUuid;
+
 public class PancakeService {
     private final OrderRepository orderRepository;
     private final PancakeRepository pancakeRepository;
@@ -164,11 +166,6 @@ public class PancakeService {
         }
     }
 
-    private void validateUuid(UUID id, String label) {
-        if (id == null) {
-            throw new IllegalArgumentException(label + " must not be null");
-        }
-    }
 
     private Order findOrder(UUID orderId) {
         validateUuid(orderId, "Order id");
